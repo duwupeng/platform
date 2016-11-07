@@ -20,6 +20,7 @@ public class UserService {
 	
 	public List<User> searchAll(){
 		List<User> list = userMapper.findAll();
+		System.out.println("list: " + list.size());
 		return list;
 	}
 }
