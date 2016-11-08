@@ -16,7 +16,7 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 	
-	@RequestMapping(value="/product",method=RequestMethod.GET)
+	@RequestMapping(value="/products",method=RequestMethod.GET)
 	public List<Product> readUserInfo(){
 		List<Product> ls=productService.searchAll();
 		return ls;
