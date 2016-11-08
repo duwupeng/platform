@@ -12,7 +12,6 @@
     <module>service-a</module>
     <module>service-b</module>
     <module>ui</module>
-    <module>config-repo</module>
   </modules>
   <packaging>pom</packaging>
 
