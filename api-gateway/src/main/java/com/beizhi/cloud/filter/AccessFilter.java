@@ -5,6 +5,7 @@ import com.netflix.zuul.ZuulFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
 
 /**
  * Created by eric on 16/11/7.
@@ -32,7 +33,7 @@ public class AccessFilter extends ZuulFilter {
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-
+        Enumeration<String> req = request.getParameterNames();
         log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
 
 //        Object accessToken = request.getParameter("accessToken");

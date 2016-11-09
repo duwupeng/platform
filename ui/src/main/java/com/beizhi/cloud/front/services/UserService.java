@@ -16,17 +16,17 @@ import java.util.List;
 public class UserService {
     @Autowired
     RestTemplate restTemplate;
-
 //    @Autowired
 //    FeignUserService feignUserService;
 
     final String SERVICE_NAME="service-a";
 
     @HystrixCommand(fallbackMethod = "fallbackSearchAll")
-    public List<User> readUserInfo() {
+    public List<User> readUserInfos() {
         return restTemplate.getForObject("http://"+SERVICE_NAME+"/user", List.class);
         //return feignUserService.readUserInfo();
     }
+
     private List<User> fallbackSearchAll() {
         System.out.println("HystrixCommand fallbackMethod handle!");
         List<User> ls = new ArrayList<User>();
@@ -35,4 +35,27 @@ public class UserService {
         ls.add(user);
         return ls;
     }
+
+    public User saveUser(User user) {
+        return restTemplate.getForObject("http://"+SERVICE_NAME+"/user/"+user, User.class);
+
+        //return feignUserService.readUserInfo();
+    }
+
+    public User updateUser(User user) {
+        return restTemplate.getForObject("http://"+SERVICE_NAME+"/user/"+user, User.class);
+
+        //return feignUserService.readUserInfo();
+    }
+    public User deleteUser(Long id) {
+        return restTemplate.getForObject("http://"+SERVICE_NAME+"/user/"+id, User.class);
+
+        //return feignUserService.readUserInfo();
+    }
+    public User getUser(Long id ) {
+        return restTemplate.getForObject("http://"+SERVICE_NAME+"/user/"+id, User.class);
+
+        //return feignUserService.readUserInfo();
+    }
+
 }

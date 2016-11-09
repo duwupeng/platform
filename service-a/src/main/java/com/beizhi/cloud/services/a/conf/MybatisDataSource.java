@@ -30,14 +30,28 @@ public class MybatisDataSource {
 	public DataSource dataSource() {		
 		DataSourceProperties config = dataSourceProperties;		
 		this.pool = new org.apache.tomcat.jdbc.pool.DataSource();		
-		this.pool.setDriverClassName(config.getDriverClassName());
-		this.pool.setUrl(config.getUrl());
-		if (config.getUsername() != null) {
-			this.pool.setUsername(config.getUsername());
-		}
-		if (config.getPassword() != null) {
-			this.pool.setPassword(config.getPassword());
-		}
+//		this.pool.setDriverClassName(config.getDriverClassName());
+//		this.pool.setUrl(config.getUrl());
+//		if (config.getUsername() != null) {
+//			this.pool.setUsername(config.getUsername());
+//		}
+//		if (config.getPassword() != null) {
+//			this.pool.setPassword(config.getPassword());
+//		}
+
+
+		this.pool.setDriverClassName("com.mysql.jdbc.Driver");
+		this.pool.setUrl("jdbc:mysql://127.0.0.1:3306/db_a?useUnicode=true&characterEncoding=utf-8");
+		this.pool.setUsername("root");
+		this.pool.setPassword("root123");
+
+//		if (config.getUsername() != null) {
+//			this.pool.setUsername(config.getUsername());
+//		}
+//		if (config.getPassword() != null) {
+//			this.pool.setPassword(config.getPassword());
+//		}
+
 		this.pool.setInitialSize(config.getInitialSize());
 		this.pool.setMaxActive(config.getMaxActive());
 		this.pool.setMaxIdle(config.getMaxIdle());
