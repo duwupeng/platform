@@ -2,7 +2,7 @@ package com.beizhi.cloud.services.a.conf;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = DataSourceProperties.DS, ignoreUnknownFields = false)
+//@ConfigurationProperties(prefix = DataSourceProperties.DS, ignoreUnknownFields = false)
 public class DataSourceProperties {
 
 	//对应配置文件里的配置键
