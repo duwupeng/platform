@@ -14,10 +14,10 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
-@Configuration
-@EnableConfigurationProperties(DataSourceProperties.class)
-//mybaits dao 搜索路径
-@MapperScan("com.beizhi.cloud.services.a.dao")
+//@Configuration
+//@EnableConfigurationProperties(DataSourceProperties.class)
+////mybaits dao 搜索路径
+//@MapperScan("com.beizhi.cloud.services.a.dao")
 public class MybatisDataSource {
 	@Autowired
 	private DataSourceProperties dataSourceProperties;
@@ -26,7 +26,7 @@ public class MybatisDataSource {
 
 	private org.apache.tomcat.jdbc.pool.DataSource pool;
 	
-	@Bean(destroyMethod = "close")
+//	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {		
 		DataSourceProperties config = dataSourceProperties;		
 		this.pool = new org.apache.tomcat.jdbc.pool.DataSource();		

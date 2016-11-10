@@ -1,4 +1,4 @@
-package com.beizhi.cloud.services.a.domain;
+package com.beizhi.cloud.services.a.service;
 
 
 import java.util.List;
