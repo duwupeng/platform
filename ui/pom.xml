@@ -11,6 +11,11 @@
     <name>ui Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -42,6 +47,7 @@
             <groupId>org.jolokia</groupId>
             <artifactId>jolokia-core</artifactId>
         </dependency>
+
 
     </dependencies>
     <build>

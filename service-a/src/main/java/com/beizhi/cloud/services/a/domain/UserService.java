@@ -23,4 +23,20 @@ public class UserService {
 		System.out.println("list: " + list.size());
 		return list;
 	}
+
+	public User get(){
+		User user = userMapper.get();
+		return user;
+	}
+	public User save(){
+		User user = userMapper.add();
+		return user;
+	}
+
+	public void delete(){
+		userMapper.delete();
+	}
+	public void update(){
+		userMapper.update();
+	}
 }
