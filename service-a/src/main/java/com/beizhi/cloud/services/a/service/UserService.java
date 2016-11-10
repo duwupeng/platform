@@ -3,20 +3,21 @@ package com.beizhi.cloud.services.a.service;
 
 import java.util.List;
 
-import com.beizhi.cloud.services.a.dao.UserDao;
+import com.beizhi.cloud.services.a.dao.UserMapper;
 import com.beizhi.cloud.services.a.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
-@Transactional
+@Transactional(readOnly = true)
 public class UserService {
 
-	
 	@Autowired
-	private UserDao userMapper;
+	private UserMapper userMapper;
 	
 	public List<User> searchAll(){
 		List<User> list = userMapper.findAll();
@@ -24,19 +25,24 @@ public class UserService {
 		return list;
 	}
 
-	public User get(){
-		User user = userMapper.get();
-		return user;
-	}
-	public User save(){
-		User user = userMapper.add();
-		return user;
+	@Transactional(readOnly = false)
+	public User createUser(User user) {
+		userMapper.insert(user);
+		return getUserById(user.getId());
 	}
 
-	public void delete(){
-		userMapper.delete();
+	public User getUserById(Integer id) {
+		return userMapper.getById(id);
 	}
-	public void update(){
-		userMapper.update();
+
+	@Transactional(readOnly = false)
+	public User updateUser(User user) {
+		userMapper.update(user);
+		return getUserById(user.getId());
+	}
+
+	@Transactional(readOnly = false)
+	public void deleteUser(Integer userId) {
+		userMapper.delete(userId);
 	}
 }
