@@ -9,4 +9,11 @@ import java.util.List;
 public interface UserDao {
 
 	List<User> findAll();
+
+	User add();
+	void delete();
+	void update();
+	User get();
+
+
 }

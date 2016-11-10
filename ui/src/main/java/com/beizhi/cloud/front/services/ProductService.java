@@ -19,15 +19,11 @@ public class ProductService {
     @Autowired
     RestTemplate restTemplate;
 
-//    @Autowired
-//    FeignUserService feignUserService;
-
     final String SERVICE_NAME="service-b";
 
     @HystrixCommand(fallbackMethod = "fallbackSearchAll")
     public List<Product> readProductInfo() {
         return restTemplate.getForObject("http://"+SERVICE_NAME+"/products", List.class);
-        //return feignUserService.readUserInfo();
     }
     private List<Product> fallbackSearchAll() {
         System.out.println("HystrixCommand fallbackMethod handle!");
