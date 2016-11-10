@@ -40,8 +40,8 @@ public class UserController {
 		}
 	}
 
-	@PutMapping(value = "/user")
-	public User updateUser(User userinfo){
-		return userService.updateUser(userinfo);
+	@PutMapping(value = "/user/update")
+	public User updateUser(@RequestBody User user){
+		return userService.updateUser(user);
 	}
 }

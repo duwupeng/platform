@@ -1,13 +1,12 @@
 package com.beizhi.cloud.service.a.test.web;
 
 import com.beizhi.cloud.services.a.model.User;
+import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.TestRestTemplate;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
+import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -26,7 +25,7 @@ public class UserControllerTest {
 
     private int port = 8001;
     private String servicePathPre = "/user";
-    private RestTemplate restTemplate = new TestRestTemplate();
+    private RestTemplate restTemplate = new RestTemplate();
 
 //    private Integer userId;
     private User user;
@@ -87,11 +86,19 @@ public class UserControllerTest {
         user = createUser();
         assertNotNull(user.getId());
 
-        user.setNameCn("哈哈哈");
-        String servicePath = servicePathPre;
+        user.setNameEn("hahaha");
+        String servicePath = servicePathPre + "/update";
         String url = "http://localhost:" + port + servicePath;
 
-        restTemplate.put(url, user);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        String json = new Gson().toJson(user);
+        HttpEntity<String> entity = new HttpEntity<String>(json,headers);
+
+//        HttpEntity<User> entity = new HttpEntity<User>(user, headers);
+
+        ResponseEntity<User> resp = restTemplate.exchange(url, HttpMethod.PUT, entity, User.class);
+        assertEquals(user.getNameEn(), resp.getBody().getNameEn());
     }
 
     public static <T, E> T postJson(String url,  E entity, Class<T> responseType, RestTemplate restTemplate){
