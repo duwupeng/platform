@@ -21,7 +21,12 @@ public class UserService {
 
     @HystrixCommand(fallbackMethod = "fallbackSearchAll")
     public List<User> readUserInfos() {
-        return restTemplate.getForObject("http://"+SERVICE_NAME+"/user", List.class);
+        System.out.println(System.nanoTime());
+        List<User> users = restTemplate.getForObject("http://"+SERVICE_NAME+"/user", List.class);
+        System.out.println(System.nanoTime());
+
+        return users;
+
     }
 
     public User saveUser(User user) {
