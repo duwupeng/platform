@@ -55,5 +55,14 @@
             <artifactId>jolokia-core</artifactId>
         </dependency>
 
+
+
+        <!--common dependency-->
+        <dependency>
+            <groupId>com.beizhi.cloud</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 </project>
