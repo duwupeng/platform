@@ -1,5 +1,6 @@
 package com.beizhi.cloud.openservice.services;
 
+import com.beizhi.cloud.common.ServiceResponse;
 import com.beizhi.cloud.openservice.models.User;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,12 @@ public class UserService {
 
     public User saveUser(User user) {
 
-        return restTemplate.getForObject("http://"+SERVICE_NAME+"/user/"+user, User.class);
+//        return restTemplate.getForObject("http://"+SERVICE_NAME+"/user/"+user, User.class);
+        System.out.println("user："+ user);
+        ServiceResponse service = restTemplate.postForObject("http://"+SERVICE_NAME+"/user/1",user,ServiceResponse.class);
 
 
+        return new User();
     }
 
     public User updateUser(User user) {

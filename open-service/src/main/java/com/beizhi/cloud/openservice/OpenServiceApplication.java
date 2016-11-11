@@ -21,9 +21,9 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 @EnableCircuitBreaker
 @EnableFeignClients
-public class WebApplication {
+public class OpenServiceApplication {
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(WebApplication.class, args);
+        SpringApplication.run(OpenServiceApplication.class, args);
     }
 
     @LoadBalanced
