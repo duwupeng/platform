@@ -11,7 +11,6 @@
     <module>eureka-server</module>
     <module>service-a</module>
     <module>service-b</module>
-    <module>ui</module>
   </modules>
   <packaging>pom</packaging>
 
