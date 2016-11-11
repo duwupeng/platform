@@ -10,8 +10,8 @@
     <module>config-server</module>
     <module>eureka-server</module>
     <module>service-a</module>
-    <module>service-b</module>
     <module>open-service</module>
+    <module>common</module>
   </modules>
   <packaging>pom</packaging>
 

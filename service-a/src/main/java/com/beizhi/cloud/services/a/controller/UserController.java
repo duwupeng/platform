@@ -1,4 +1,4 @@
-package com.beizhi.cloud.services.a.web;
+package com.beizhi.cloud.services.a.controller;
 
 import java.util.List;
 

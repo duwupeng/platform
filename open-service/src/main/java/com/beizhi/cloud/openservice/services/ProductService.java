@@ -24,6 +24,18 @@ public class ProductService {
     public List<Product> readProductInfo() {
         return restTemplate.getForObject("http://"+SERVICE_NAME+"/products", List.class);
     }
+
+
+
+    public List<Product> update() {
+        Product product = new Product();
+        product.setName("product1");
+        product.setCreatetime(new Date());
+        return restTemplate.getForObject("http://"+SERVICE_NAME+"/products", List.class);
+    }
+
+
+
     private List<Product> fallbackSearchAll() {
         System.out.println("HystrixCommand fallbackMethod handle!");
         List<Product> ls = new ArrayList<Product>();
