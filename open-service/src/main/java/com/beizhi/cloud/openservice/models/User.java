@@ -1,23 +1,50 @@
 package com.beizhi.cloud.openservice.models;
 
-/**
- * Created by eric on 16/11/7.
- */
 public class User {
-    private String username;
-    public String getUsername() {
-        return username;
-    }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	private Integer id;
+	private String username;
+	private String password;
+	private String nameCn;
+	private String nameEn;
 
+	public Integer getId() {
+		return id;
+	}
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                '}';
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getNameCn() {
+		return nameCn;
+	}
+
+	public void setNameCn(String nameCn) {
+		this.nameCn = nameCn;
+	}
+
+	public String getNameEn() {
+		return nameEn;
+	}
+
+	public void setNameEn(String nameEn) {
+		this.nameEn = nameEn;
+	}
 }
