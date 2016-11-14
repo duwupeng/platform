@@ -32,6 +32,7 @@ public class OpenServiceApplication {
         return new RestTemplate();
     }
 
+
     @Bean
     @Scope("prototype")
     public Feign.Builder feignBuilder() {

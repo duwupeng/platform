@@ -41,13 +41,16 @@ public class UserService {
     }
 
     public User updateUser(User user) {
-        return restTemplate.getForObject("http://"+SERVICE_NAME+"/user/"+user, User.class);
+         restTemplate.postForObject("http://"+SERVICE_NAME+"/user/",user,ServiceResponse.class);
+        return new User();
+
     }
 
 
 
     public User deleteUser(Long id) {
-        return restTemplate.getForObject("http://"+SERVICE_NAME+"/user/"+id, User.class);
+         restTemplate.postForObject("http://"+SERVICE_NAME+"/user/"+id,null,ServiceResponse.class);
+        return new User();
     }
 
     public User getUser(Long id ) {

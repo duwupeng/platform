@@ -12,6 +12,7 @@
     <module>service-a</module>
     <module>open-service</module>
     <module>common</module>
+    <module>mock-ui</module>
   </modules>
   <packaging>pom</packaging>
 
