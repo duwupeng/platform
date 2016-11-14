@@ -63,7 +63,7 @@ public class UserService {
 
         List<User> ls = new ArrayList<User>();
         User user = new User();
-        user.setUsername("TestHystrixCommand");
+        user.setUserName("TestHystrixCommand");
         ls.add(user);
 
         return ls;

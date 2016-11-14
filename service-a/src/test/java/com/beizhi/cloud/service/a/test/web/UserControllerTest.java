@@ -33,7 +33,7 @@ public class UserControllerTest {
     @Before
     public void before() {
         user = new User();
-        user.setUsername("edison");
+        user.setUserName("edison");
         user.setNameCn("冠希");
         user.setNameEn("Edison");
         user.setPassword("12345");
@@ -54,7 +54,7 @@ public class UserControllerTest {
         user.setId(userinfo.getId());
 
         assertNotNull(userinfo.getId());
-        assertEquals(user.getUsername(), userinfo.getUsername());
+        assertEquals(user.getUserName(), userinfo.getUserName());
     }
 
     @Test
@@ -67,7 +67,7 @@ public class UserControllerTest {
 
         User userinfo = restTemplate.getForObject(url, User.class);
 
-        assertEquals(user.getUsername(), userinfo.getUsername());
+        assertEquals(user.getUserName(), userinfo.getUserName());
     }
 
     @Test

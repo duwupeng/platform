@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 //          请求路径        请求方法           作用
 //          -/users        HTTP GET        得到users
@@ -56,6 +57,7 @@ public class UserController {
     public ResponseEntity<String> saveUser(User user){
         System.out.println(user);
         System.out.println("saveUser!->"+user);
+        user.setBornAt(new Date());
         userService.saveUser(user);
         return new ResponseEntity<String>(Status.SUCESS, HttpStatus.OK);
     }
