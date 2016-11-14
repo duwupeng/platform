@@ -14,34 +14,37 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping(value="/users",method=RequestMethod.GET)
+	@GetMapping(value="/users")
 	public List<User> readUserInfo(){
 		List<User> ls=userService.searchAll();		
 		return ls;
 	}
 
-	@PostMapping(value = "/user")
-	public User createUser(@RequestBody User userinfo){
-		return userService.createUser(userinfo);
-	}
-
 	@GetMapping(value = "/user/{userId}")
 	public User getUser(@PathVariable("userId") Integer userId){
+		System.out.println("userId："+ userId);
 		return userService.getUserById(userId);
 	}
 
-	@DeleteMapping(value = "/user/{userId}")
+	@PostMapping(value = "/user/create")
+	public User createUser(@RequestBody User user){
+		System.out.println("user："+ user);
+		return userService.createUser(user);
+	}
+	@PostMapping(value = "/user/delete/{userId}")
 	public String deleteUser(@PathVariable("userId") Integer userId){
 		try{
+			System.out.println("userId："+ userId);
 			userService.deleteUser(userId);
 			return "Success";
 		}catch (Exception e){
 			return "Fail";
 		}
 	}
-
-	@PutMapping(value = "/user/update")
+	@PostMapping(value = "/user/update")
 	public User updateUser(@RequestBody User user){
+		System.out.println("userId："+ user);
 		return userService.updateUser(user);
 	}
+
 }

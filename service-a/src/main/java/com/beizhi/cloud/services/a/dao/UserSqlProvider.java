@@ -12,7 +12,7 @@ public class UserSqlProvider {
 
     public String buildInsertSql(User user){
         return new SQL(){{
-            INSERT_INTO("user");
+            INSERT_INTO("t_user");
             VALUES("username", "#{username}");
             VALUES("password", "#{password}");
             if(user.getNameCn() != null && !"".equals(user.getNameCn().trim()))
@@ -24,7 +24,7 @@ public class UserSqlProvider {
 
     public String buildUpdateSql(User user){
         return new SQL(){{
-            UPDATE("user");
+            UPDATE("t_user");
             if(StringUtils.isNotBlank(user.getUsername())){
                 SET("username = #{username}");
             }

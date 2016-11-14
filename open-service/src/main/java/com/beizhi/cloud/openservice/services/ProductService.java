@@ -18,22 +18,20 @@ public class ProductService {
     @Autowired
     RestTemplate restTemplate;
 
-    final String SERVICE_NAME="service-b";
+    final String SERVICE_NAME = "service-b";
 
     @HystrixCommand(fallbackMethod = "fallbackSearchAll")
     public List<Product> readProductInfo() {
-        return restTemplate.getForObject("http://"+SERVICE_NAME+"/products", List.class);
+        return restTemplate.getForObject("http://" + SERVICE_NAME + "/products", List.class);
     }
-
 
 
     public List<Product> update() {
         Product product = new Product();
         product.setName("product1");
         product.setCreatetime(new Date());
-        return restTemplate.getForObject("http://"+SERVICE_NAME+"/products", List.class);
+        return restTemplate.getForObject("http://" + SERVICE_NAME + "/products", List.class);
     }
-
 
 
     private List<Product> fallbackSearchAll() {
