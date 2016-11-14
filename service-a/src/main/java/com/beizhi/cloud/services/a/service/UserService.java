@@ -25,24 +25,22 @@ public class UserService {
 		return list;
 	}
 
-	@Transactional(readOnly = false)
-	public User createUser(User user) {
-		userMapper.insert(user);
-		return getUserById(user.getId());
-	}
-
 	public User getUserById(Integer id) {
 		return userMapper.getById(id);
 	}
 
 	@Transactional(readOnly = false)
-	public User updateUser(User user) {
-		userMapper.update(user);
-		return getUserById(user.getId());
+	public Integer createUser(User user) {
+		return userMapper.insert(user);
 	}
 
 	@Transactional(readOnly = false)
-	public void deleteUser(Integer userId) {
-		userMapper.delete(userId);
+	public Integer updateUser(User user) {
+		return userMapper.update(user);
+	}
+
+	@Transactional(readOnly = false)
+	public Integer deleteUser(Integer userId) {
+		return userMapper.delete(userId);
 	}
 }

@@ -24,7 +24,7 @@
 
     <!--PutMapping--update-->
     <li>update user</li>
-    <form action="http://127.0.0.1:8001/user/1" method="post">
+    <form action="http://127.0.0.1:8001/user/2" method="post">
         <input type="hidden" name="_method" value="PUT">
         用户名 : <input type="text" name="username" value="cepin"><br/>
         密码 : <input type="text" name="password" value="cepin"><br/>
@@ -38,14 +38,15 @@
     <!--DeleteMapping--delete-->
     <br/>
     <li>delete user</li>
-    <form action="http://127.0.0.1:8001/user/1" method="post">
+    <form action="http://127.0.0.1:8001/user/2" method="post">
+        <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="提交">
     </form>
 
 
 
     <li>get user by query</li>
-    <form action="http://127.0.0.1:8001/user/1" method="get">
+    <form action="http://127.0.0.1:8001/user/3" method="get">
         <br/>
         <input type="submit" value="提交">
     </form>

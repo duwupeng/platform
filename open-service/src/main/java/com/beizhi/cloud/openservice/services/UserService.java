@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,32 +30,32 @@ public class UserService {
         return users;
 
     }
-
-    public User saveUser(User user) {
-
-//        return restTemplate.getForObject("http://"+SERVICE_NAME+"/user/"+user, User.class);
-        System.out.println("user：" + user);
-        ServiceResponse service = restTemplate.postForObject("http://" + SERVICE_NAME + "/user/create", user, ServiceResponse.class);
-
-
-        return new User();
-    }
-
-    public User updateUser(User user) {
-        restTemplate.postForObject("http://" + SERVICE_NAME + "/user/update", user, ServiceResponse.class);
-        return new User();
-
-    }
-
-
-    public User deleteUser(Long id) {
-        restTemplate.postForObject("http://" + SERVICE_NAME + "/user/delete" + id, null, ServiceResponse.class);
-        return new User();
-    }
-
     public User getUser(Long id) {
         return restTemplate.getForObject("http://" + SERVICE_NAME + "/user/" + id, User.class);
     }
+
+    public Integer saveUser(User user) {
+        System.out.println("user save：" + user);
+        Integer userSaved = restTemplate.postForObject("http://" + SERVICE_NAME + "/user/create", user, Integer.class);
+        return  userSaved;
+    }
+
+    public Integer updateUser(User user) {
+        user.setBornAt(new Date());
+        user.setSex(true);
+
+        System.out.println("user update：" + user);
+
+        return restTemplate.postForObject("http://" + SERVICE_NAME + "/user/update", user, Integer.class);
+    }
+
+
+    public Integer deleteUser(Long id) {
+        System.out.println("user delete：" + id);
+        return restTemplate.postForObject("http://" + SERVICE_NAME + "/user/delete/" + id, null, Integer.class);
+    }
+
+
 
 
     private List<User> fallbackSearchAll() {

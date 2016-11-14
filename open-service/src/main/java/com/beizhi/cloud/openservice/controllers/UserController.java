@@ -1,5 +1,7 @@
 package com.beizhi.cloud.openservice.controllers;
 
+import com.beizhi.cloud.common.ServiceResponse;
+import com.beizhi.cloud.common.constant.Status;
 import com.beizhi.cloud.openservice.models.User;
 import com.beizhi.cloud.openservice.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,38 +31,32 @@ public class UserController {
         List<User> users=userService.readUserInfos();
         return new ResponseEntity<List<User>>(users, HttpStatus.OK);
     }
-    @PostMapping(value="/user")
-    public ResponseEntity<User> saveUser(User user){
-        System.out.println(user);
-        System.out.println("saveUser!");
-
-        User userSaved=userService.saveUser(user);
-
-        return new ResponseEntity<User>(userSaved, HttpStatus.OK);
-    }
     @GetMapping(value="/user/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Long id){
-        System.out.println("getUserById!");
+        System.out.println("getUserById!->"+id);
         User user=userService.getUser(id);
 
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
     @PutMapping(value="/user/{id}")
-    public ResponseEntity<User> updateUser(User user){
-        System.out.println(user);
-        System.out.println("updateUser!");
-
-        User userUpdated=userService.updateUser(user);
-
-        return new ResponseEntity<User>(user, HttpStatus.OK);
+    public ResponseEntity<String> updateUser(User user){
+        System.out.println("updateUser!->" + user);
+        userService.updateUser(user);
+        return new ResponseEntity<String>(Status.SUCESS, HttpStatus.OK);
     }
     @DeleteMapping(value="/user/{id}")
-    public ResponseEntity<User> deleteUser(@PathVariable("id") Long id){
-        System.out.println("deleteUser!");
+    public ResponseEntity<String> deleteUser(@PathVariable("id") Long id){
+        System.out.println("deleteUser!->"+id);
 
         System.out.println("id-->"+id);
-        User user=userService.deleteUser(id);
-
-        return new ResponseEntity<User>(user, HttpStatus.OK);
+        userService.deleteUser(id);
+        return new ResponseEntity<String>(Status.SUCESS, HttpStatus.OK);
+    }
+    @PostMapping(value="/user")
+    public ResponseEntity<String> saveUser(User user){
+        System.out.println(user);
+        System.out.println("saveUser!->"+user);
+        userService.saveUser(user);
+        return new ResponseEntity<String>(Status.SUCESS, HttpStatus.OK);
     }
 }

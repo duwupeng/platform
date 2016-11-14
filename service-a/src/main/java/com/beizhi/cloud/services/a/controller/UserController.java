@@ -27,24 +27,35 @@ public class UserController {
 	}
 
 	@PostMapping(value = "/user/create")
-	public User createUser(@RequestBody User user){
-		System.out.println("user："+ user);
-		return userService.createUser(user);
+	public Integer createUser(@RequestBody User user){
+		try{
+			System.out.println("userId："+ user);
+			return userService.createUser(user);
+		}catch (Exception e){
+			e.printStackTrace();
+			return null;
+		}
 	}
 	@PostMapping(value = "/user/delete/{userId}")
-	public String deleteUser(@PathVariable("userId") Integer userId){
+	public Integer deleteUser(@PathVariable("userId") Integer userId){
 		try{
 			System.out.println("userId："+ userId);
-			userService.deleteUser(userId);
-			return "Success";
+			return userService.deleteUser(userId);
 		}catch (Exception e){
-			return "Fail";
+			e.printStackTrace();
+			return null;
 		}
 	}
 	@PostMapping(value = "/user/update")
-	public User updateUser(@RequestBody User user){
+	public Integer updateUser(@RequestBody User user){
 		System.out.println("userId："+ user);
-		return userService.updateUser(user);
+		try{
+			return userService.updateUser(user);
+		}catch (Exception e){
+			e.printStackTrace();
+			return null;
+		}
+
 	}
 
 }

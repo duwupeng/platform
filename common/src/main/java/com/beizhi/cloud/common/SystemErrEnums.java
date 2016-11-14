@@ -3,14 +3,14 @@ package com.beizhi.cloud.common;
 /**
  * Created by eric on 16/11/10.
  */
-public enum OpenServiceErrEnum implements ExceptionEnums{
+public enum SystemErrEnums implements ExceptionEnums{
 
-    UNIQUE_KEY(10001, "答题生成出错");
+    BAD_SQL(10001, "SQL错误");
 
     public int code;
     public String message;
 
-	private OpenServiceErrEnum(int code, String message){
+	private SystemErrEnums(int code, String message){
         this.code = code;
         this.message = message;
     }

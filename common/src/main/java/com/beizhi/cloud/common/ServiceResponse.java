@@ -5,9 +5,19 @@ package com.beizhi.cloud.common;
  */
 public class ServiceResponse<T> {
     T response;
-    Status status;
-}
-class Status{
-    int code;
-    String message;
+
+    int code=0;
+    String message="SUCESS";
+
+    boolean isBizError=false;
+
+
+    public ServiceResponse(T response) {
+        this.response = response;
+    }
+    public ServiceResponse(T response,ExceptionEnums emue) {
+        this.response = response;
+
+    }
+
 }

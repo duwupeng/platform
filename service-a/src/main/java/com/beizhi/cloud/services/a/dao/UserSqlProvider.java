@@ -28,11 +28,22 @@ public class UserSqlProvider {
             if(StringUtils.isNotBlank(user.getUsername())){
                 SET("username = #{username}");
             }
+            if(StringUtils.isNotBlank(user.getPassword())){
+                SET("password = #{password}");
+            }
             if(StringUtils.isNotBlank(user.getNameCn())){
                 SET("name_cn = #{nameCn}");
             }
             if(StringUtils.isNotBlank(user.getNameEn())){
                 SET("name_en = #{nameEn}");
+            }
+            if(user.isSex()){
+                SET("sex = 1");
+            }else{
+                SET("sex = 0");
+            }
+            if(StringUtils.isNotBlank(user.getBornAt().toString())){
+                SET("born_at = #{bornAt}");
             }
             WHERE("id = #{id}");
         }}.toString();

@@ -1,5 +1,7 @@
 package com.beizhi.cloud.services.a.model;
 
+import java.util.Date;
+
 public class User {
 
 	private Integer id;
@@ -7,6 +9,8 @@ public class User {
 	private String password;
 	private String nameCn;
 	private String nameEn;
+	private Date bornAt;
+	private boolean sex;
 
 	public Integer getId() {
 		return id;
@@ -46,5 +50,21 @@ public class User {
 
 	public void setNameEn(String nameEn) {
 		this.nameEn = nameEn;
+	}
+
+	public Date getBornAt() {
+		return bornAt;
+	}
+
+	public void setBornAt(Date bornAt) {
+		this.bornAt = bornAt;
+	}
+
+	public boolean isSex() {
+		return sex;
+	}
+
+	public void setSex(boolean sex) {
+		this.sex = sex;
 	}
 }
