@@ -23,6 +23,8 @@ public class UserService {
 
     @HystrixCommand(fallbackMethod = "fallbackSearchAll")
     public List<User> readUserInfos() {
+        System.out.println("user List：");
+
         long start = System.currentTimeMillis();
         List<User> users = restTemplate.getForObject("http://" + SERVICE_NAME + "/users", List.class);
         System.out.println("consumed time : " + (System.currentTimeMillis() - start));
@@ -36,6 +38,7 @@ public class UserService {
 
     public Integer saveUser(User user) {
         System.out.println("user save：" + user);
+
         Integer userSaved = restTemplate.postForObject("http://" + SERVICE_NAME + "/user/create", user, Integer.class);
         return  userSaved;
     }

@@ -1,6 +1,7 @@
 package com.beizhi.cloud.common;
 
 /**
+ * 分页请求
  * Created by eric on 16/11/14.
  */
 public class PageRequest {

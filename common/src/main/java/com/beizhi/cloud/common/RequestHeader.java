@@ -1,6 +1,7 @@
 package com.beizhi.cloud.common;
 
 /**
+ * 请求头
  * Created by eric on 16/11/14.
  */
 public class RequestHeader {
