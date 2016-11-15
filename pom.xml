@@ -9,10 +9,12 @@
     <module>api-gateway</module>
     <module>config-server</module>
     <module>eureka-server</module>
-    <module>service-a</module>
-    <module>open-service</module>
+    <module>ms-a</module>
     <module>common</module>
     <module>mock-ui</module>
+    <module>os-ab</module>
+    <module>ms-b</module>
+    <module>base-domain</module>
   </modules>
   <packaging>pom</packaging>
 
