@@ -15,6 +15,7 @@
     <module>os-ab</module>
     <module>ms-b</module>
     <module>base-domain</module>
+      <module>ms-email</module>
   </modules>
   <packaging>pom</packaging>
 
