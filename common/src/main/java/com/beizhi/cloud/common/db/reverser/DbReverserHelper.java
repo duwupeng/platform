@@ -507,7 +507,7 @@ public class DbReverserHelper {
         return "String";
       }
       if (type.equalsIgnoreCase("DECIMAL")) {
-        return "BigDecimal";
+        return "java.math.BigDecimal";
       }
       if (type.equalsIgnoreCase("TINYINT")
               || type.equalsIgnoreCase("SMALLINT")
