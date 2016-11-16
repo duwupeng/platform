@@ -15,6 +15,11 @@ public class MqController {
 	
 	@GetMapping(value="/send/{msg}")
 	public void send(@PathVariable("msg") String msg){
-		rabbitSender.sendMessage(msg);
+		rabbitSender.sendMessage("send" + msg);
+	}
+
+	@GetMapping(value="/sendAnother/{msg}")
+	public void sendToAnotherChannel(@PathVariable("msg") String msg){
+		rabbitSender.sendMessageToAnotherChannel("sendAnother" + msg);
 	}
 }

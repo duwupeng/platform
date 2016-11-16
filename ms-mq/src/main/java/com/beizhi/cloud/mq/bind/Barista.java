@@ -12,7 +12,7 @@ public interface Barista {
 //    String INPUT_CHANNEL = "input_channel";
       String OUTPUT_CHANNEL = "output_channel";
 //    String INPUT1 = "input1";
-//    String OUTPUT1 = "output1";
+       String OUTPUT_CHANNEL_ANOTHER = "output_channel_another";
     /***
      *     注解@Input声明了它是一个输入类型的通道，名字是Barista.INPUT_CHANNEL，
      *     也就是position3的input_channel。这一名字与上述配置app2的配置文件中position1应该一致，
@@ -29,6 +29,6 @@ public interface Barista {
 //    @Input(Barista.INPUT1)
 //    SubscribableChannel input1();
 //
-//    @Output(Barista.OUTPUT1)
-//    MessageChannel output1();
+    @Output(Barista.OUTPUT_CHANNEL_ANOTHER)
+    MessageChannel output1();
 }

@@ -22,6 +22,17 @@ public class RabbitSender {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return null;
+        return "send";}
+
+
+    // 发送消息another chanel
+    public String sendMessageToAnotherChannel(String msg){
+        try{
+            source.logOutPut().send(MessageBuilder.withPayload(msg).build());
+            System.out.println("发送了"+msg);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "send";
     }
 }

@@ -7,6 +7,9 @@ spring:
         output_channel:            #channelName
              destination: mydest          #destination，或者可以认为是发布－订阅模型里面的topic
              binder: rabbit1
+        output_channel_another:            #channelName
+              destination: mydest_another          #destination，或者可以认为是发布－订阅模型里面的topic
+              binder: rabbit1
       binders:
         rabbit1:
           type: rabbit

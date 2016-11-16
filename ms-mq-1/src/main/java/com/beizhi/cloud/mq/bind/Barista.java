@@ -10,9 +10,10 @@ import org.springframework.messaging.SubscribableChannel;
  */
 public interface Barista {
     String INPUT_CHANNEL = "input_channel";
+    String INPUT_CHANNEL_ANOTHER = "input_channel_another";
+
 //    String OUTPUT_CHANNEL = "output_channel";
 
-//    String INPUT1 = "input1";
 //    String OUTPUT1 = "output1";
 
     /***
@@ -32,10 +33,8 @@ public interface Barista {
 //    @Output(Barista.OUTPUT_CHANNEL)
 //    MessageChannel logOutPut();
 
-
-
-//    @Input(Barista.INPUT1)
-//    SubscribableChannel input1();
+        @Input(Barista.INPUT_CHANNEL_ANOTHER)
+        SubscribableChannel input();
 //
 //    @Output(Barista.OUTPUT1)
 //    MessageChannel output1();

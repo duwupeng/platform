@@ -14,7 +14,13 @@ public class RabbitReceiver {
     @StreamListener(Barista.INPUT_CHANNEL)
     public void receiver(Message<Object> message){
         Object obj = message.getPayload();
-        System.out.println("接受对象:"+obj+"\n");
+        System.out.println("接受对象Channel:"+obj+"\n");
+    }
+
+    @StreamListener(Barista.INPUT_CHANNEL_ANOTHER)
+    public void receiverAnotherChannel(Message<Object> message){
+        Object obj = message.getPayload();
+        System.out.println("接受对象AnotherChannel:"+obj+"\n");
     }
 
 }
