@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: ms-mq-1
+  cloud:
+    stream:
+      bindings:
+        input_channel:            #channelName
+             destination: mydest         #destination，或者可以认为是发布－订阅模型里面的topic
+             binder: rabbit1
+        input_channel_another:                  #channelName
+             destination: mydest_another         #destination，或者可以认为是发布－订阅模型里面的topic
+             binder: rabbit1
+
+      binders:
+        rabbit1:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 127.0.0.1   #rabbitMQ服务器地址
+                port: 5672          #rabbitMQ服务器端口
+                username: guest
+                password: guest
+                virtual-host: /
+
+
+                #service discovery url
+eureka:
+   client:
+      serviceUrl:
+           defaultZone: http://localhost:9003/eureka/
+
+#service name
+
+server:
+     port: 8008

@@ -2,8 +2,8 @@ package com.beizhi.cloud.services.a.controller;
 
 import java.util.List;
 
-import com.beizhi.cloud.services.a.service.UserService;
 import com.beizhi.cloud.services.a.model.User;
+import com.beizhi.cloud.services.a.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
