@@ -10,25 +10,22 @@
     <artifactId>eureka-server</artifactId>
     <packaging>jar</packaging>
 
-    <name>eureka-server</name>
-    <!--<url>http://maven.apache.org</url>-->
-
-    <!--<properties>-->
-        <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-    <!--</properties>-->
-
     <dependencies>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
     </dependencies>
 </project>
