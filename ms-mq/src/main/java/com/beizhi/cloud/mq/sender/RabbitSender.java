@@ -28,7 +28,7 @@ public class RabbitSender {
     // 发送消息another chanel
     public String sendMessageToAnotherChannel(String msg){
         try{
-            source.logOutPut().send(MessageBuilder.withPayload(msg).build());
+            source.outputAnother().send(MessageBuilder.withPayload(msg).build());
             System.out.println("发送了"+msg);
         }catch (Exception e){
             e.printStackTrace();

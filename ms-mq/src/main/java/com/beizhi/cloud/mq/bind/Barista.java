@@ -30,5 +30,5 @@ public interface Barista {
 //    SubscribableChannel input1();
 //
     @Output(Barista.OUTPUT_CHANNEL_ANOTHER)
-    MessageChannel output1();
+    MessageChannel outputAnother();
 }

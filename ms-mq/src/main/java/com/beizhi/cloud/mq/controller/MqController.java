@@ -14,12 +14,15 @@ public class MqController {
 	RabbitSender rabbitSender;
 	
 	@GetMapping(value="/send/{msg}")
-	public void send(@PathVariable("msg") String msg){
+	public String send(@PathVariable("msg") String msg){
 		rabbitSender.sendMessage("send" + msg);
+		return "send OUTPUT_CHANNEL "+msg;
 	}
 
 	@GetMapping(value="/sendAnother/{msg}")
-	public void sendToAnotherChannel(@PathVariable("msg") String msg){
+	public String  sendToAnotherChannel(@PathVariable("msg") String msg){
 		rabbitSender.sendMessageToAnotherChannel("sendAnother" + msg);
+		return "send OUTPUT_CHANNEL_ANOTHER "+msg;
+
 	}
 }
