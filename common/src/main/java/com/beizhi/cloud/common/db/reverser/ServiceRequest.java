@@ -1,6 +1,6 @@
 package com.beizhi.cloud.common.db.reverser;
 
-import com.beizhi.cloud.common.RequestHeader;
+import com.beizhi.cloud.common.protocal.RequestHeader;
 
 /**
  * Created by kanghong.zhao on 2016-11-16.

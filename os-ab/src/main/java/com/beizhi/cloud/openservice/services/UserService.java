@@ -1,6 +1,6 @@
 package com.beizhi.cloud.openservice.services;
 
-import com.beizhi.cloud.services.a.model.User;
+import com.beizhi.cloud.base.User;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

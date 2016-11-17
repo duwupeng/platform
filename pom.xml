@@ -16,8 +16,8 @@
     <module>ms-b</module>
     <module>base-domain</module>
       <module>ms-email</module>
-      <module>ms-mq</module>
-      <module>ms-mq-1</module>
+      <module>ms-mq-sender</module>
+      <module>ms-mq-receiver</module>
   </modules>
   <packaging>pom</packaging>
 

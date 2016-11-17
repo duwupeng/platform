@@ -1,6 +1,6 @@
 package com.beizhi.cloud.openservice.services;
 
-import com.beizhi.cloud.services.a.model.Product;
+import com.beizhi.cloud.base.TProduct;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,23 +21,23 @@ public class ProductService {
     final String SERVICE_NAME = "service-b";
 
     @HystrixCommand(fallbackMethod = "fallbackSearchAll")
-    public List<Product> readProductInfo() {
+    public List<TProduct> readProductInfo() {
         return restTemplate.getForObject("http://" + SERVICE_NAME + "/products", List.class);
     }
 
 
-    public List<Product> update() {
-        Product product = new Product();
+    public List<TProduct> update() {
+        TProduct product = new TProduct();
         product.setName("product1");
         product.setCreatetime(new Date());
         return restTemplate.getForObject("http://" + SERVICE_NAME + "/products", List.class);
     }
 
 
-    private List<Product> fallbackSearchAll() {
+    private List<TProduct> fallbackSearchAll() {
         System.out.println("HystrixCommand fallbackMethod handle!");
-        List<Product> ls = new ArrayList<Product>();
-        Product product = new Product();
+        List<TProduct> ls = new ArrayList<TProduct>();
+        TProduct product = new TProduct();
         product.setName("TestProductHystrixCommand");
         product.setCreatetime(new Date());
         ls.add(product);

@@ -2,7 +2,7 @@ package com.beizhi.cloud.openservice.controllers;
 
 import com.beizhi.cloud.common.constant.Status;
 import com.beizhi.cloud.openservice.services.UserService;
-import com.beizhi.cloud.services.a.model.User;
+import com.beizhi.cloud.base.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

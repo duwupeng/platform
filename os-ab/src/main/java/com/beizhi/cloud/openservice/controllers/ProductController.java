@@ -1,7 +1,7 @@
 package com.beizhi.cloud.openservice.controllers;
 
 import com.beizhi.cloud.openservice.services.ProductService;
-import com.beizhi.cloud.services.a.model.Product;
+import com.beizhi.cloud.base.TProduct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +22,8 @@ public class ProductController {
 //    FeignUserService feignUserService;
 
     @RequestMapping(value="/products")
-    public ResponseEntity<List<Product>> readUserInfo(){
-        List<Product> products=productService.readProductInfo();
-        return new ResponseEntity<List<Product>>(products, HttpStatus.OK);
+    public ResponseEntity<List<TProduct>> readUserInfo(){
+        List<TProduct> products=productService.readProductInfo();
+        return new ResponseEntity<List<TProduct>>(products, HttpStatus.OK);
     }
 }
