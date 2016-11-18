@@ -15,9 +15,9 @@
     <module>os-ab</module>
     <module>ms-b</module>
     <module>base-domain</module>
-      <module>ms-email</module>
-      <module>ms-mq-sender</module>
-      <module>ms-mq-receiver</module>
+    <module>ms-email</module>
+    <module>ms-mq-sender</module>
+    <module>ms-mq-receiver</module>
   </modules>
   <packaging>pom</packaging>
 
