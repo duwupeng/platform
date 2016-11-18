@@ -7,8 +7,8 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>api-gateway</module>
-    <module>config-server</module>
-    <module>eureka-server</module>
+    <module>config-center</module>
+    <module>registration-center</module>
     <module>ms-a</module>
     <module>common</module>
     <module>mock-ui</module>

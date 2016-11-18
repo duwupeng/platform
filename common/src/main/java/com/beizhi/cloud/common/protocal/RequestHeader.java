@@ -42,4 +42,60 @@ public class RequestHeader {
      *
      */
     public String sessionId; // optional
+
+    public int getOperatorId() {
+        return operatorId;
+    }
+
+    public void setOperatorId(int operatorId) {
+        this.operatorId = operatorId;
+    }
+
+    public String getOperatorName() {
+        return operatorName;
+    }
+
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public CallerFrom getCallerFrom() {
+        return callerFrom;
+    }
+
+    public void setCallerFrom(CallerFrom callerFrom) {
+        this.callerFrom = callerFrom;
+    }
+
+    public String getCallerIP() {
+        return callerIP;
+    }
+
+    public void setCallerIP(String callerIP) {
+        this.callerIP = callerIP;
+    }
+
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
 }
