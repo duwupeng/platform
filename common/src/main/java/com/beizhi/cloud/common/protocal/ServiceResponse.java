@@ -1,6 +1,6 @@
 package com.beizhi.cloud.common.protocal;
 
-import com.beizhi.cloud.common.exception.ExceptionEnums;
+import com.talebase.cloud.common.exception.ExceptionEnums;
 
 /**
  *

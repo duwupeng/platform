@@ -9,12 +9,12 @@ public class PageRequest {
      * 查询的开始序号（序号从零开始）
      *
      */
-    public int start; // required
+    public Integer start; // required
     /**
      * 返回记录数
      *
      */
-    public int limit; // required
+    public Integer limit; // required
     /**
      * 排序的字段<br/>
      * <ul>
@@ -24,21 +24,19 @@ public class PageRequest {
      */
     public String sortFields; // optional
 
-
-
-    public int getStart() {
+    public Integer getStart() {
         return start;
     }
 
-    public void setStart(int start) {
+    public void setStart(Integer start) {
         this.start = start;
     }
 
-    public int getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(int limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
