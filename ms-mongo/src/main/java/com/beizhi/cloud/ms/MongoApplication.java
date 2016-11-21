@@ -5,10 +5,12 @@ import com.beizhi.cloud.ms.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Created by eric on 16/11/19.
  */
+@SpringBootApplication
 public class MongoApplication implements CommandLineRunner {
 
     @Autowired
