@@ -18,6 +18,7 @@
     <module>ms-email</module>
     <module>ms-mq-sender</module>
     <module>ms-mq-receiver</module>
+    <module>ms-mongo</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -54,10 +55,22 @@
   </dependencies>
 
   <build>
+    <finalName>AutoEngine</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+        </configuration>
+        <!-- mvn spring-boot:repackage -->
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
