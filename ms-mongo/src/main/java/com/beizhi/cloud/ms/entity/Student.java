@@ -2,6 +2,8 @@ package com.beizhi.cloud.ms.entity;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.Map;
+
 /**
  * Created by eric on 16/11/19.
  */
@@ -11,6 +13,7 @@ public class Student {
 
     private String firstName;
     private String lastName;
+    private Map<String,String> extendedFields;
 
 
 
@@ -22,7 +25,13 @@ public class Student {
         this.lastName = lastName;
     }
 
+    public Map<String, String> getExtendedFields() {
+        return extendedFields;
+    }
 
+    public void setExtendedFields(Map<String, String> extendedFields) {
+        this.extendedFields = extendedFields;
+    }
 
     @Override
     public String toString() {
