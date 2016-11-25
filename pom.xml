@@ -54,25 +54,25 @@
     </dependency>
   </dependencies>
 
-  <build>
-    <finalName>AutoEngine</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
-        </configuration>
-        <!-- mvn spring-boot:repackage -->
-        <executions>
-          <execution>
-            <goals>
-              <goal>repackage</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+  <!--<build>-->
+    <!--<finalName>AutoEngine</finalName>-->
+    <!--<plugins>-->
+      <!--<plugin>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+        <!--<configuration>-->
+          <!--<jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>-->
+        <!--</configuration>-->
+        <!--&lt;!&ndash; mvn spring-boot:repackage &ndash;&gt;-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<goals>-->
+              <!--<goal>repackage</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
+    <!--</plugins>-->
+  <!--</build>-->
 
 </project>
